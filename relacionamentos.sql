@@ -143,6 +143,7 @@ VALUES
 (10, 1, 3, 7.63, 22.89);
 
 select ped.Id as PedidoId,
+u.Nome,
 ped.datapedido,
 prod.Nome,
 pp.valorunitario,
@@ -153,4 +154,6 @@ inner join Pedido ped
 on ped.id = pp.pedidoid
 inner join produto prod
 on prod.id = pp.produtoid
-where ped.id  = 1
+inner join usuario u
+on ped.usuarioId = u.id
+where u.id = 1
